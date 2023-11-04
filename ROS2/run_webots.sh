@@ -1,0 +1,1 @@
+colcon build && source install/local_setup.bash && ros2 launch my_package webots_launch.py
