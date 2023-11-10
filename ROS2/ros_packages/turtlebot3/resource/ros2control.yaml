@@ -1,0 +1,12 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 50
+    
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+joint_state_broadcaster:
+  ros__parameters:
+    extra_joints:
+      - LDS-01_secondary_motor
+      - LDS-01_main_motor
