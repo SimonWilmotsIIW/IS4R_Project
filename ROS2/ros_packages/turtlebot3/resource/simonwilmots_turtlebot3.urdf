@@ -10,6 +10,9 @@
                 <frameName>LDS-01</frameName>
             </ros>
         </device>
+        <!--<plugin name="joint_state_publisher">
+            <jointName>left_wheel,right_wheel</jointName>
+        </plugin>-->
         <ros2_control name="WebotsControl" type="system">
             <!-- <hardware>
                 <plugin>webots_ros2_control::Ros2ControlSystem</plugin>

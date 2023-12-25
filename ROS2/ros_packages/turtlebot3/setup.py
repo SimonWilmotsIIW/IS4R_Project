@@ -5,7 +5,7 @@ data_files = []
 data_files.append(('share/ament_index/resource_index/packages', ['resource/' + package_name]))
 data_files.append(('share/' + package_name + '/launch', ['launch/turtlebot_launch.py', 'launch/webots_launch.py']))
 data_files.append(('share/' + package_name + '/worlds', ['worlds/turtlebot_world.wbt']))
-data_files.append(('share/' + package_name + '/resource', ['resource/simonwilmots_turtlebot3.urdf', 'resource/ros2control.yaml']))
+data_files.append(('share/' + package_name + '/resource', ['resource/simonwilmots_turtlebot3.urdf', 'resource/ros2control.yaml', 'resource/nav2_map.yaml', 'resource/nav2_params.yaml']))
 data_files.append(('share/' + package_name + '/rviz2', ['rviz2/rviz2.rviz']))
 data_files.append(('share/' + package_name, ['package.xml']))
 

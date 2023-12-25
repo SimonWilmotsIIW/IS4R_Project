@@ -1,0 +1,1 @@
+colcon build && source install/setup.bash && ros2 launch turtlebot3 turtlebot_launch.py nav:=true
