@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<robot name="Simon's Custom Turtlebot">
+    <webots>
+        <!--<device reference="LDS-01" type="Lidar">
+            <ros>
+                <topicName>/left_sensor</topicName>
+                <alwaysOn>true</alwaysOn>
+            </ros>
+        </device>
+        <device reference="ds1" type="DistanceSensor">
+            <ros>
+                <topicName>/right_sensor</topicName>
+                <alwaysOn>true</alwaysOn>
+            </ros>
+        </device>-->
+        <plugin type="turtlebot3.turtlebot_driver.TurtleBotDriver" />
+    </webots>
+</robot>
