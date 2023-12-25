@@ -50,7 +50,7 @@ def generate_launch_description():
         executable='robot_state_publisher',
         output='screen',
         parameters=[{
-            'robot_description': robot_description_path
+            'robot_description': '<robot name=""><link name=""/></robot>'
         }],
     )
 
@@ -58,7 +58,7 @@ def generate_launch_description():
         package='tf2_ros',
         executable='static_transform_publisher',
         output='screen',
-        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'LDS_01'],
+        arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'base_footprint'],
     )
 
     shutdown_handler = launch.actions.RegisterEventHandler(

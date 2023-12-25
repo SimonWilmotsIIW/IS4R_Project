@@ -1,18 +1,28 @@
 <?xml version="1.0" ?>
 <robot name="Simon's Custom Turtlebot">
     <webots>
-        <!--<device reference="LDS-01" type="Lidar">
+        <device reference="LDS-01" type="Lidar">
             <ros>
-                <topicName>/left_sensor</topicName>
-                <alwaysOn>true</alwaysOn>
+                <enabled>true</enabled>
+                <updateRate>5</updateRate>
+                <topicName>/SimonWilmots_TurtleBot3/lidar</topicName>
+                <alwaysOn>false</alwaysOn>
+                <frameName>LDS-01</frameName>
             </ros>
         </device>
-        <device reference="ds1" type="DistanceSensor">
-            <ros>
-                <topicName>/right_sensor</topicName>
-                <alwaysOn>true</alwaysOn>
-            </ros>
-        </device>-->
+        <ros2_control name="WebotsControl" type="system">
+            <!-- <hardware>
+                <plugin>webots_ros2_control::Ros2ControlSystem</plugin>
+            </hardware>-->
+            <joint name="right wheel motor">
+                <state_interface name="position"/>
+                <command_interface name="velocity"/>
+            </joint>
+            <joint name="left wheel motor">
+                <state_interface name="position"/>
+                <command_interface name="velocity"/>
+            </joint>
+        </ros2_control>
         <plugin type="turtlebot3.turtlebot_driver.TurtleBotDriver" />
     </webots>
 </robot>
