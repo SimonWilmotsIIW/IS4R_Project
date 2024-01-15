@@ -84,28 +84,27 @@ def generate_launch_description():
     os.environ['TURTLEBOT3_MODEL'] = 'burger'
     nav2_map = os.path.join(package_dir, 'resource', 'simons_new_map.yaml')
     nav2_params = os.path.join(package_dir, 'resource', 'nav2_params.yaml')
-    if 'turtlebot3_navigation2' in get_packages_with_prefixes():
-        turtlebot_navigation = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(
-                get_package_share_directory('turtlebot3_navigation2'), 'launch', 'navigation2.launch.py')),
-            launch_arguments=[
-                ('map', nav2_map),
-                ('params_file', nav2_params),
-                ('use_sim_time', use_sim_time),
-            ],
-            condition=launch.conditions.IfCondition(use_nav))
-        navigation_nodes.append(turtlebot_navigation)
+    
+    turtlebot_navigation = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(
+            get_package_share_directory('turtlebot3_navigation2'), 'launch', 'navigation2.launch.py')),
+        launch_arguments=[
+            ('map', nav2_map),
+            ('params_file', nav2_params),
+            ('use_sim_time', use_sim_time),
+        ],
+        condition=launch.conditions.IfCondition(use_nav))
+    navigation_nodes.append(turtlebot_navigation)
 
     # --- Cartographer SLAM ----
-    if 'turtlebot3_cartographer' in get_packages_with_prefixes():
-        turtlebot_slam = IncludeLaunchDescription(
-            PythonLaunchDescriptionSource(os.path.join(
-                get_package_share_directory('turtlebot3_cartographer'), 'launch', 'cartographer.launch.py')),
-            launch_arguments=[
-                ('use_sim_time', use_sim_time),
-            ],
-            condition=launch.conditions.IfCondition(use_slam))
-        navigation_nodes.append(turtlebot_slam)
+    turtlebot_slam = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(
+            get_package_share_directory('turtlebot3_cartographer'), 'launch', 'cartographer.launch.py')),
+        launch_arguments=[
+            ('use_sim_time', use_sim_time),
+        ],
+        condition=launch.conditions.IfCondition(use_slam))
+    navigation_nodes.append(turtlebot_slam)
 
     # Wait for webots before launching turtebot driver
     waiting_nodes = WaitForControllerConnection(

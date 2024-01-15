@@ -2,20 +2,24 @@
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/robotis/turtlebot/protos/TurtleBot3Burger.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/devices/robotis/protos/RobotisLds01.proto"
-
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2022b/projects/objects/floors/protos/CircleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/balls/protos/RobocupSoccerBall.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/plants/protos/PottedTree.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/animals/protos/Dog.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.1808690350488475 0.007382888595087279 0.9834794787470104 3.0613464948292464
-  position 4.727431222690939 -0.5432799849695938 1.9395651384890373
+  orientation -0.19560085870912225 0.007004784438580674 0.9806585731370643 3.0713835555453386
+  position 12.19861717551619 -0.8042057672414192 5.140513339495238
   follow "SimonWilmots_TurtleBot3"
+}
+Dog {
+  translation -0.530896 -2.04247 -8.88178e-16
+  rotation 0 0 1 0.458149
 }
 TexturedBackground {
 }
@@ -32,30 +36,22 @@ RobocupSoccerBall {
   translation -0.44 -0.9 0.07
 }
 WoodenBox {
-  translation -1.31 0 0.15
+  translation -1.43691 0.864652 0.15
   size 0.3 0.3 0.3
 }
 WoodenBox {
-  translation -0.84 1.11 0.15
-  name "wooden box(1)"
-  size 0.3 0.3 0.3
-}
-WoodenBox {
-  translation 0.74 0.4 0.15
+  translation 1.42237 0.734077 0.15
   name "wooden box(2)"
   size 0.3 0.3 0.3
 }
 WoodenBox {
-  translation 0.74 -1.14 0.15
+  translation 1.06325 -1.06592 0.15
   name "wooden box(3)"
   size 0.3 0.3 0.3
 }
-
 TurtleBot3Burger {
-  name "SimonWilmots_TurtleBot3"
   translation -0.0104308 -0.0274393 0
-  rotation 0 1 0 0
-  
+  name "SimonWilmots_TurtleBot3"
   controller "<extern>"
   controllerArgs [
     ""
